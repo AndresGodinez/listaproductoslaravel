@@ -4,7 +4,7 @@
 
 <div class="col-sm-8">
   <h2>
-  Editar Producto
+    Nuevo producto
     <br><br>
     <div class="col-md-6">
 
@@ -19,9 +19,9 @@
     </div>
   </h2>
 <div class="row">
-  {!! Form::model($product, ['route'=>['products.update', $product->id], 'method'=>'PUT'])!!}
-  @include('products.fragments.form')
-  {!!Form::close()!!}
+  {!! Form::open(['route' => 'products.store']) !!}
+    @include('products.fragments.form')
+  {!! Form::close() !!}
 </div>
 </div>
 <div class="col-sm-4">
