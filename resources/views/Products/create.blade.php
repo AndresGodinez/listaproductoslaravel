@@ -18,11 +18,13 @@
       </a>
     </div>
   </h2>
-<div class="row">
-  {!! Form::open(['route' => 'products.store']) !!}
-    @include('products.fragments.form')
-  {!! Form::close() !!}
-</div>
+  <div class="row">
+    @include('products.fragments.errors')
+
+    {!! Form::open(['route' => 'products.store']) !!}
+      @include('products.fragments.form')
+    {!! Form::close() !!}
+  </div>
 </div>
 <div class="col-sm-4">
   col-sm-4

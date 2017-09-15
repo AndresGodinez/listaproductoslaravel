@@ -19,6 +19,8 @@
     </div>
   </h2>
 <div class="row">
+  @include('products.fragments.errors')
+
   {!! Form::model($product, ['route'=>['products.update', $product->id], 'method'=>'PUT'])!!}
   @include('products.fragments.form')
   {!!Form::close()!!}
