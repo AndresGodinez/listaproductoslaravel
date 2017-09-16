@@ -27,7 +27,7 @@
 </div>
 </div>
 <div class="col-sm-4">
-  col-sm-4
+  @include('products.fragments.ayuda_actualizar')
 </div>
 
 @endsection

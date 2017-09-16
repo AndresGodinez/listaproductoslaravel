@@ -20,13 +20,23 @@ class ProductController extends Controller
       return view('products.edit', compact('product'));
     }
     public function update(ProductRequest $request, $id){
-      return "Producto Actualizado". $id;
+      $product = Product::find($id);
+      $product->name  = $request->name;
+      $product->short = $request->short;
+      $product->body  = $request->body;
+      $product->save();
+      return redirect()->route('products.index')->with('info', 'El producto fue actualizado');
     }
     public function create(){
       return view('products.create');
     }
     public function store(ProductRequest $request){
-      return "Producto Guardado";
+      $product = new Product;
+      $product->name  = $request->name;
+      $product->short = $request->short;
+      $product->body  = $request->body;
+      $product->save();
+      return redirect()->route('products.index')->with('info', 'El producto fue guardado');
     }
     public function destroy($id){
       $product = Product::find($id);
